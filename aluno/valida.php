@@ -16,7 +16,7 @@
 
             if($usuario == 'vanessa' && $senha == '12345'){
                 $_SESSION['usuario'] = $_POST['usuario'];
-                header('Location: menuAluno.html');
+                header('Location: menuAluno.php');
             }else{
                 header('Location: loginAluno.php');
                 exit;

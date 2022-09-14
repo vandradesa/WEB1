@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: BebasNeue;
+    src: url(BebasNeue-Regular.ttf);
+}
+
+/*  Paleta de Cores
+    #29a0b1 
+    #167d7f
+    #98d7c2
+    #9fc7aa    
+*/
+
+body{
+    background-color: white;
+}
+.container{
+    gap: 1px;
+    /* background-color: rgb(59, 67, 187); */
+    padding: 20px;
+    color: black;
+    /*height: 95vh;
+    border: 6px solid #167d7f;*/
+    
+}
+
+label{
+    float: left;
+}
+
+input{
+    width: 300px;
+}
+
+.campos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dados{
+    align-items: left;
+}
+
+h2{
+    text-align: center;
+}
+
+.logo{
+    /* background-color: darkmagenta; */
+    height:10%;
+    width:100%;
+   
+}
+
+.dentro_logo{
+    top: 20%;
+    position:relative;
+    /* background-color: deeppink; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    justify-content: flex-start;
+    width: 26%;
+}
+
+#titulo{
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: BebasNeue;;
+}
+
+#botton_center{
+    text-align: center;
+}
+
+.fora_login{
+    display: flex;
+    /* justify-content: flex-start; */
+    align-items: center;
+    justify-content: center;
+    height: 85%;
+}
+
+.loginform{
+    font-size: 20px;
+    /* font-weight: normal; */
+    font-family: BebasNeue;
+    background-color: #cce2d2;
+    border-radius: 5%;
+    padding-top: 15px; 
+    padding-bottom: 15px;
+    /* padding-right: 5px; */
+    /* padding-left: 10px; */
+    width: 600px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+button{
+    padding: 10px;
+    border: none;
+    outline: none;
+    width: 20%;
+    border-radius: 10px;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: BebasNeue;
+    
+}
+
+input{
+    padding: 15px;
+    border: none;
+    outline: none;
+    width: 60%;
+    height: 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.so_numero::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield;
+  
+}

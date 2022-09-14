@@ -13,7 +13,9 @@
   
         <div class="header1">            
             <h1 class="tituloheader">PERFIL <br> DO <br> ALUNO</h1>
-            <?php echo("Bem vindo(a)".$usuario); ?>
+
+            <?php
+            session_start() ;echo 'Bem vindo(a) ' .$_SESSION['usuario'] ; ?>
         </div>
 
         <div class="icone">

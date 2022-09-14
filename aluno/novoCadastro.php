@@ -11,14 +11,14 @@
     <body>
         <div class="container">
       
-            <form action="valida.php" method="post">
+            <form action="valida_cadastro.php" method="post">
             <div class="fora_login">
                 <div class="loginform">   
                     <h2 id="cads">Novo Cadastro</h2>
                     <div class="campos">
-                        <label>Nome Completo:</label>       <input type="text" ><br>
+                        <label>Nome Completo:</label>       <input type="text" name="name"><br>
                         <label>Data Nascimento:</label>     <input type="date" ><br>
-                        <label>CPF:</label>                 <input class="so_numero" type="number" maxlength="11"><br>
+                        <label>CPF:</label>                 <input class="so_numero" type="number" maxlength="11" name="cpf"><br>
                         <label>RG:</label>                  <input class="so_numero" type="number" maxlength="9"><br>
                         <label>Telefone(Com DDD):</label>   <input class="so_numero" type="tel" maxlength="11"><br>
                         <label>Matrícula:</label>           <input class="so_numero" type="number"><br>
@@ -29,7 +29,7 @@
                     </div>
                     <br></br>
                     <div id="botton_center"> 
-                        <a href = "../index.html"><button>Enviar</button></a>
+                        <a href = "../index.html"><button name="novocadastro" type="submit">Enviar</button></a>
                     </div>
                 </div>  
             </div>

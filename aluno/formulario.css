@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: BebasNeue;
+    src: url(BebasNeue-Regular.ttf);
+}
+
+/*  Paleta de Cores
+    #29a0b1 
+    #167d7f
+    #98d7c2
+    #9fc7aa    
+*/
+
+body{
+    background-color: white;
+}
+.container{
+    gap: 1px;
+    /* background-color: rgb(59, 67, 187); */
+    padding: 2px;
+    color: black;
+    height: 95vh;
+    border: 6px solid #167d7f;
+    
+}
+
+
+.logo{
+    /* background-color: darkmagenta; */
+    height:10%;
+    width:100%;
+   
+}
+
+.dentro_logo{
+    top: 20%;
+    position:relative;
+    /* background-color: deeppink; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+#titulo{
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: BebasNeue;;
+}
+
+.fora_login{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
+    height: 85%;
+}
+
+.loginform{
+    text-align: center;
+    /* font-size: small; */
+    font-weight: normal;
+    font-family: BebasNeue;
+    background-color: #9fc7aa;
+    border-radius: 3%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 450px;
+}
+
+button{
+    padding: 10px;
+    border: none;
+    outline: none;
+    width: 30%;
+    border-radius: 10px;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: BebasNeue;
+}
+
+input{
+    padding: 10px;
+    border: none;
+    outline: none;
+    width: 70%;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
