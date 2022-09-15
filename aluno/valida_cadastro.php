@@ -5,6 +5,7 @@
     if(isset($_POST['novocadastro'])){
         $nome = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS); //'name' aqui referencia o id da tag <input type="text" name="name">
         $cpf = filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_NUMBER_INT);
+        //$tipo = "aluno";
 
     }
 
