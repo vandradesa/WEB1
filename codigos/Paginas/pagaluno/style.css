@@ -1,0 +1,527 @@
+@charset "UTF-8";
+
+
+@font-face {
+  font-family: BebasNeue;
+  src: url(BebasNeue-Regular.ttf);
+}
+
+
+/* Tela ESQUERDA - Nome das regiões -----------------------------------------------------------*/
+
+.header1 { grid-area: header1; } /* Titulo: Portal do aluno, portal do professo, etc */
+.icone { grid-area:logo; } /* Avatar */
+
+    /* Parte Inferior tela ESQUERDA */
+    .logoprincipal{grid-area: logoprincipal;}
+
+    /* MENU */
+    .MENU{grid-area: MENU;}
+
+
+/* Tela DIREITA - Nome das regiões ------------------------------------------------------*/
+
+.Formulario {grid-area: teladir;
+  border-left: 4px #167d7f solid;} /* A barrinha que separa as duas partes*/
+
+
+/* Configurações container principal - Divisao em direita e esquerda;-------------------- */
+.container {
+  display: grid; /*transforma toda a tela em grid*/
+
+  grid-template-areas: /*areas do grid*/
+    ' header1 logo teladir teladir teladir'
+    ' MENU MENU teladir teladir teladir'
+    ' MENU MENU teladir teladir teladir'
+    ' MENU MENU teladir teladir teladir'
+    ' logoprincipal logoprincipal teladir teladir teladir';
+
+  grid-template-columns: 2fr 1fr 2fr 2fr 2fr;
+  grid-template-rows: 2fr 2fr 2fr 2fr 2fr;
+  gap: 1px; /*Intervalo entre as areas */
+  height: 92vh; /*Altura */
+
+  padding: 10px;
+  margin: 0px;
+  border: 6px solid #167d7f;
+  
+}
+
+/*  Paleta de Cores
+    #29a0b1 
+    #167d7f
+    #98d7c2
+    #9fc7aa    
+*/
+
+/*--------------------------- MENU (Tela esquerda) ---------------------------------------*/
+.item1_menu { grid-area: menu1; background: #29a0b1 ;}
+.item2_menu { grid-area: menu2; background:  #167d7f;}
+.item3_menu { grid-area: menu3; background: #98d7c2;}
+.item4_menu { grid-area: menu4; background: #9fc7aa ;}
+.item5_menu { grid-area: menu5; background: #29a0b1;}
+.item6_menu { grid-area: menu6; background: #167d7f;}
+
+.MENU{
+  display: grid; 
+  grid-template-areas: 'menu1 menu2'
+                        'menu3 menu4'
+                        'menu5 menu6';
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: 2fr 2fr 2fr;
+  height: 50vh;
+  width: 30vw;
+  gap:2px;
+
+ text-align: center;
+ padding: 10px;
+ font-size: 20px;
+}
+
+.MENU>div{ /*Configura cada "quadrado no menu" */
+  padding-top: 40px;
+
+}
+
+/* Parte superior da tela esquerda */
+div>.header1{
+ 
+  color: black;
+  font-size: 10px;
+  
+  padding-bottom: 10px;  
+  position: relative;
+  padding-left: 1px;
+  margin-left: 0px;
+}
+
+div>.icone{
+    color:black;
+    background-color: white;
+    
+}
+
+/*  CONFIGURAÇÕES DE ESTILO GERAIS ---------------------------*/
+
+/*  Paleta de Cores
+  #29a0b1 
+  #167d7f
+  #98d7c2
+  #9fc7aa    
+*/
+
+body{
+  background-color: white;
+  font-family: BebasNeue;
+}
+
+h1{
+  font-size: 30px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+h2{
+  font-size: 25px;
+  padding-top: 5px;
+  padding-bottom: 0px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+h3{
+  font-size: 25px;
+  padding-top: 40px;
+  text-align: left;
+  padding-left: 15px;
+}
+
+#titulo{
+  text-align: left;
+}
+
+/*Link */
+
+a:link {
+  color: white;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+li{
+  text-align: left;
+  font-size: 20px;
+}
+
+
+/*Configurações de estilo na tela esquerda ----------------------------------*/
+
+/* LOGO PRINCIPAL */
+div>.logoprincipal{
+ padding: 2px;
+  }
+
+div>.dentro_logo{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  background-color:  white;
+}
+ 
+
+  /* CONFIGURAÇÕES FORMULARIO - TELA DIREITA-----------------------------*/
+  .form1 {
+    
+    margin-top: 2px;
+    height: 8vh;
+    width: 40vw;
+    padding-top: 10px;
+    padding-left: 80px;
+    background-color: #9fc7aa;
+   border-radius: 3%;
+   
+    font-size: 20px;
+    box-sizing: border-box;
+    position: relative;
+    left: 140px;
+    top: 10px;
+  }
+  
+  .form1 div + div {
+    margin-top: 1em;
+  }
+
+  .form2 {
+    
+    margin-top: 2px;
+    height: 20vh;
+    width: 40vw;
+    padding-top: 10px;
+    padding-left: 80px;
+    background-color: #9fc7aa;
+    border-radius: 3%;
+   
+    font-size: 20px;
+    box-sizing: border-box;
+    position: relative;
+    left: 140px;
+    top: 30px;
+    text-align: left;
+  }
+  
+  .form2 div + div {
+    margin-top: 1em;
+    padding: 4px;
+  }
+
+  .form3 {
+    
+    margin-top: 10px;
+    height: 65vh;
+    width: 40vw;
+    padding-top: 25px;
+    padding-left: 80px;
+    background-color: #9fc7aa;
+    border-radius: 3%;
+   
+    font-size: 20px;
+    box-sizing: border-box;
+    position: relative;
+    left: 140px;
+    top: 30px;
+    text-align: left;
+  }
+  
+  .form3 div + div {
+    margin-top: 1em;
+    padding: 4px;
+  }
+  
+  .form4 {
+    
+    margin-top: 2px;
+    height: 16vh;
+    width: 40vw;
+    padding-top: 10px;
+    padding-left: 80px;
+    background-color: #9fc7aa;
+   border-radius: 3%;
+   
+    font-size: 20px;
+    box-sizing: border-box;
+    position: relative;
+    left: 140px;
+    top: 10px;
+  }
+  
+  .form4 div + div {
+    margin-top: 1em;
+    padding: 4px;
+  }
+  
+  .form5 {
+    
+    margin-top: 2px;
+    height: 40vh;
+    width: 40vw;
+    padding-top: 10px;
+    padding-left: 80px;
+    background-color: #9fc7aa;
+   border-radius: 3%;
+   
+    font-size: 20px;
+    box-sizing: border-box;
+    position: relative;
+    left: 140px;
+    top: 10px;
+  }
+  
+  .form5 div + div {
+    margin-top: 1em;
+    padding: 4px;
+  }
+  
+  .format2{
+	display: inline;
+    width: 140px;
+    text-align: left;
+    padding: 0px;
+    border: 0px;
+    font-size: 20px; 
+  }
+  
+  label {
+    /*Para ter certeza que todas as labels tem o mesmo tamanho e estão propriamente alinhadas */
+    display: inline-block;
+    width: 140px;
+    text-align: left;
+    padding: 0px;
+    border: 0px;
+    font-size: 20px;
+  }
+  
+  input, textarea{
+   padding: 0px;  
+    /* Para dar o mesmo tamanho a todos os campo de texto */
+    width: 230px;
+    height: 30px;
+    box-sizing: border-box;  
+    /* Para harmonizar o look & feel das bordas nos campos de texto*/
+    border: 1px solid #999;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+  
+  }
+.validarproj{
+  font-size: 25px;
+  padding-top: 10px;
+  
+
+}
+  .botoesvalidar{
+    padding-left: 20px;
+    margin-left: 20px;
+  }
+
+.validarsim{
+  width: 20px;
+  height: 24px;
+  font-size:  10px;
+  
+  padding: 5px;
+  margin: 10px;
+}
+
+.validarnao{
+  width: 20px;
+  height: 24px;
+  font-size:  10px;
+  margin: 10px;
+  padding: 5px;
+
+}
+.sim{
+  font-size: 25px;
+  padding: 1px;
+  margin: 0px;
+}
+
+.nao{
+  font-size: 25px;
+  padding: 1px;
+  margin: 0px;
+}
+ 
+#alunos{
+  justify-content: center;
+  align-content: center;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 5px;   
+  cursor: pointer;
+  left: 0px;
+  top: 0px;
+  border: none;
+  outline: none;
+  width: 20%;
+  height: 30px;
+  padding: 5px;
+ 
+  color: black;
+  font-size: 18px;   
+  font-family: BebasNeue;
+
+}
+
+
+.butao2{
+  border-radius: 5px;   
+   left: 0px;
+  top: 0px;
+
+  width: 40%;
+  height: 40px;
+  padding: 0px;
+ 
+  justify-content: center;
+  align-content: center;
+  box-sizing: border-box;
+  position: relative;
+  color: black;
+  font-size: 20px;   
+  font-family: BebasNeue;
+  cursor: pointer;
+  border: none;
+  outline: none;
+
+}
+
+.butao{
+
+  border-radius: 10px;   
+  left: 100px;
+  top:0px;
+  width: 40%;
+  height: 35px;
+  justify-content: center;
+  align-content: center;
+  box-sizing: border-box;
+  position: relative;
+  color: black;
+  font-size: 20px;   
+  font-family: BebasNeue;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  margin-top: 0px;
+  padding-top: 0px;
+
+}
+
+.butao3{
+  border-radius: 10px;   
+  left: 100px;
+  top:80px;
+  width: 40%;
+  height: 35px;
+  justify-content: center;
+  align-content: center;
+  box-sizing: border-box;
+  position: relative;
+  color: black;
+  font-size: 20px;   
+  font-family: BebasNeue;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  margin-top: 0px;
+  padding-top: 0px;
+
+}
+
+#mes{
+  justify-content: center;
+  align-content: center;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 5px;   
+  cursor: pointer;
+  left: 0px;
+  top: 0px;
+  border: none;
+  outline: none;
+  width: 20%;
+  height: 30px;
+  padding: 5px;
+ 
+  color: black;
+  font-size: 18px;   
+  font-family: BebasNeue;
+
+}
+
+  /* -------------------------------------------------------------------------------------*/
+
+  /* Lista alunos */
+  .lista {
+    border-radius: 1em;
+    border: 2px solid grey;
+    width: 400px;
+    height: 400px;
+    box-sizing: border-box;
+    position: relative;
+    left: 200px;
+    top:50px;
+    background: #9fc7aa;
+    
+  
+  }
+
+  .lista2 {
+    border-radius: 1em;
+    border: 2px solid grey;
+    width: 400px;
+    height: 100px;
+    box-sizing: border-box;
+    position: relative;
+    left: 200px;
+    top:50px;
+    background: #9fc7aa;
+    margin-top: 20px;
+    
+  
+  }
+  
+  .so_numero::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield;
+  
+}
+
+  .anexar {
+    border-radius: 10px;
+    left: 0px;
+    top: 0px;
+    width: 60%;
+    height: 30%;
+    padding: 0px;
+    justify-content: center;
+    align-content: center;
+    box-sizing: border-box;
+    position: relative;
+    background: aliceblue;
+    color: black;
+    font-size: 15px;
+    font-family: BebasNeue;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}

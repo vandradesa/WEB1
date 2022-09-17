@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: BebasNeue;
+  src: url(BebasNeue-Regular.ttf);
+}
+
+body{
+  font-family: BebasNeue;
+}
+
+.header1 { 
+  display:grid;
+  grid-area: header1;
+  grid-template-areas: 'tituloheader icone'; 
+  
+  width: 30vw;
+}
+
+#titulo{
+  text-align: left;
+}
+
+.item1_menu { grid-area: menu1; }
+.item2_menu { grid-area: menu2; }
+.item3_menu { grid-area: menu3; }
+.item4_menu { grid-area: menu4; }
+.item5_menu { grid-area: menu5; }
+.item6_menu { grid-area: menu6; }
+
+.icone { grid-area:icone; } /* Avatar */
+.footer{grid-area: footer;}
+.logoprincipal{grid-area: logoprincipal;}
+.telaesq{grid-area: telaesq;} /* Projetos */
+
+
+.container {
+  display: grid;
+  grid-template-areas:
+    ' header1 menu1 menu2'
+    ' telaesq  menu3 menu4 '
+    ' logoprincipal  menu5 menu6';
+    
+
+    gap: 1px;
+    background-color:white;
+    padding: 2px;
+    color:black;
+    height: 95vh;
+    border: 6px solid #167d7f;
+    gap: 1px;
+  grid-template-columns: 2fr 2fr 2fr;
+  grid-template-rows: 2fr 2fr 2fr ;
+}
+
+/*  Paleta de Cores
+    #29a0b1 
+    #167d7f
+    #98d7c2
+    #9fc7aa    
+*/
+
+.item1_menu { background-color: #29a0b1 ;}
+.item2_menu { background-color: #9fc7aa  }
+.item3_menu { background-color: #98d7c2}
+.item4_menu { background-color: #167d7f }
+.item5_menu { background-color: #29a0b1  }
+.item6_menu { background-color: #98d7c2; }
+
+.container>div {
+  
+  text-align: center;
+  font-size: 30px;
+  padding-top: 60px;
+  padding-bottom: 0px;
+
+}
+
+div>.header1{
+  background-color: white;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 0px;
+
+  
+}
+
+div>.tituloheader{
+    font-size: 30px;
+}
+
+div>.telaesq{
+    background: white;
+
+}
+.telaesq>.Projetos{
+    font-size: 26px;
+    background: white;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#Escolherproj{
+  color: black;
+  text-decoration: none;
+  
+}
+.telaesq>.novoprojeto{
+    font-size: 26px;
+    background-color: rgb(94, 116, 116);
+    padding: 10px;
+    border: 4px solid white;
+    color: black;
+
+}   
+
+div>.icone{
+    background: white;
+    
+}
+
+p:link {
+  color: white;
+  text-decoration: none;
+}
+
+
+/* LOGO PRINCIPAL */
+div>.logoprincipal{
+  padding: 2px;
+  background: white;
+  margin-top: 15px;
+  
+   }
+ 
+ div>.dentro_logo{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color:  white;
+ }
+
+a:link {
+    color: white;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: white;
+    text-decoration: none;
+  }
+
+  
