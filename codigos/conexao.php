@@ -2,8 +2,7 @@
     $servidor = "localhost";
     $usuario2 = "root";
     $senha = "";
-    $dbname = "bancoteste";
+    $dbname = "projeto";
 
     $conn = mysqli_connect($servidor, $usuario2, $senha, $dbname);
-
 ?>

@@ -1,3 +1,11 @@
+<?php
+
+ if(!isset($_SESSION)){
+    session_start();
+ }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,9 +21,7 @@
   
         <div class="header1">            
             <h1 class="tituloheader">PERFIL <br> DO <br> ALUNO</h1>
-
-            <?php
-            session_start() ;echo 'Bem vindo(a) ' .$_SESSION['usuario'] ; ?>
+            
         </div>
 
         <div class="icone">
