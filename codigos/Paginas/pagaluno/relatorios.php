@@ -42,7 +42,7 @@
                     <div>
                     <label for="projetoselec">Selecione o projeto: </label> 
                     
-                    <select id="mes" name ="select_projetoAlu">
+                    <select id="mes" name ="projetoAlu">
                         <!-- <option> Selecione  </option> -- Ruim que aí já pega a opção valor de select = 1 -->
 
                         <?php
@@ -73,14 +73,11 @@
                         <option id="P1">Projeto 2</option>
                         -->
                     </select>
-                
-                    <br></br> <!-- <a href="MenuProfessor.html"> Antes button ficava aqui dentro </a> -->
+            <!-- <a href="MenuProfessor.html"> Antes button ficava aqui dentro </a> -->
                         </div>
+                      
                  
                 
-                </form>
-
-                <form class="form2" action="Processa_relatorio.php" method="post">
                                   
                     <div><label class="format2">Anexar relatório:</label>
 
