@@ -1,6 +1,7 @@
 <?php
     include_once("conexao.php");
     //Para conectar essa página ao banco de dados. Entrar nele
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -24,9 +25,9 @@
 
         <!--MENU-->
         <div class="MENU">
-            <div class="item1_menu"><a href="relatorios.html">Enviar Relatório</a></div>
-            <div class="item2_menu"><a href="verificarhoras.html">Verificar Horas</a></div>  
-            <div class="item3_menu"><a href="enviarcertificado.html">Enviar Certificado</a></div>
+            <div class="item1_menu"><a href="relatorios.php">Enviar Relatório</a></div>
+            <div class="item2_menu"><a href="verificarhoras.php">Verificar Horas</a></div>  
+            <div class="item3_menu"><a href="enviarcertificado.php">Enviar Certificado</a></div>
             <div class="item4_menu"><a href="verificarpendencias.html">Verificar Pendências</a></div>
             <div class="item5_menu"><a href="solicitar_contato.html">Solicitar Contato</a></div>
             <div class="item6_menu"><a href="notificacoes.html">Notificações</a></div> 
@@ -37,6 +38,14 @@
 
             <h1 class="title1">Projeto 1</h1>
             <h1 class="title2">Enviar relatório</h1>
+            <?php
+                if(isset($_SESSION['msg'])){
+                    echo $_SESSION['msg'];
+                    unset($_SESSION['msg']);
+
+                }
+
+            ?>
  
                 <form action="Processa_relatorio.php" method="post" class="form1">
                     <div>
@@ -90,12 +99,12 @@
                   
                     <div>      
                     <label for="atividades" class="atividade">Descreva as atividades realizadas: </label>
-                    <textarea id="atividades"name="atividades" name="descri_relatorio"></textarea>
+                    <textarea id="atividades" name="descrirelatorio"></textarea>
                     </div>
 
                     <div>      
                     <label for="horas" class="atividade">Horas realizadas: </label>
-                    <input type="number" id="horas_relatorio" name="horas_relatorio"></textarea>
+                    <input type="number" id="horas_relatorio" name="horas_relatorio">
                     </div>
                
                     <div><input class="butao" type="submit" value="Enviar" name="botao_relatorio"></div>

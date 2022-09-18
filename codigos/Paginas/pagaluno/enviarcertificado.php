@@ -1,5 +1,11 @@
+<?php
+    include_once("conexao.php");
+    //Para conectar essa página ao banco de dados. Entrar nele
+    session_start();
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,9 +25,9 @@
 
         <!--MENU-->
         <div class="MENU">
-            <div class="item1_menu"><a href="relatorios.html">Enviar Relatório</a></div>
-            <div class="item2_menu"><a href="verificarhoras.html">Verificar Horas</a></div>  
-            <div class="item3_menu"><a href="enviarcertificado.html">Enviar Certificado</a></div>
+            <div class="item1_menu"><a href="relatorios.php">Enviar Relatório</a></div>
+            <div class="item2_menu"><a href="verificarhoras.php">Verificar Horas</a></div>  
+            <div class="item3_menu"><a href="enviarcertificado.php">Enviar Certificado</a></div>
             <div class="item4_menu"><a href="verificarpendencias.html">Verificar Pendências</a></div>
             <div class="item5_menu"><a href="solicitar_contato.html">Solicitar Contato</a></div>
             <div class="item6_menu"><a href="notificacoes.html">Notificações</a></div> 
@@ -33,22 +39,31 @@
             <h1 class="title1">Enviar Certificado</h1>
             
 
-            <form class="form1">             
-                    <div>  
-                    <label for="projetos">Selecione o projeto:</label>  <!--Você linka o label com o id projetos que está la no CSS ( #projetos{} )-->
-                    <select id="projetos">
-                        <option value="projeto1">Projeto 1</option>
-                        <option value="projeto2">Projeto 2</option>
-                    </select>
-                    </div>
-
-                   
+            <form action="Processa_relatorio.php" method="post" class="form4">
+                    <div>
+                    <label for="buscaproj">Selecione o projeto: </label> 
                     
-                </form>
+                    <select id="mes" name ="buscaproj">
+                        <!-- <option> Selecione  </option> -- Ruim que aí já pega a opção valor de select = 1 -->
 
-                <form class="form2">
+                        <?php
+                 
+                        
+                            $select_de_projetos = "SELECT * FROM projeto"; //Aqui fazemos NOSSA LIGAÇÃO PHP como o MYSQL, trazendo os dados da tabela projeto.
+                            $resultado_s_projetos = mysqli_query($conn, $select_de_projetos); //mysqli_query (): 
+                            while ($linha_projetos = mysqli_fetch_assoc($resultado_s_projetos)) { 
+                            ?> 
+                    
+                                <option value = "<?= $linha_projetos['id']; ?>"> <?= $linha_projetos['nome'];?> </option> <!-- Entre 'aspas' estão as colunas do BD -->
+                                <!-- "value" é o valor que será enviado para o BD. -->
+                            <?php
+                            }
+                            ?>
 
-                                       
+                        -->
+                    </select>
+          
+                    </div>                              
                     
                   
                     <div>      
@@ -62,7 +77,7 @@
                     
                     
                            
-                    <div><input class="butao" type="submit" value="Enviar"></div>
+                    <div><input class="butao" type="submit" value="Enviar" name="certificado"></div>
                 </form>         
 
         
