@@ -18,6 +18,7 @@ session_start();
  
 
     if(isset($_POST['botao_relatorio'])){
+
         $projAlu = $_POST['projetoAlu']; //Entre 'aspas' o "name" da tag select do HTML da outra página. SIM! Vc pega o valor de select, da opção selecionada, pelo nome dele.
         //TINHA FALTADO O UNDERLINE_OU_UNDERSCORE NA GLOBAL!
         $relatorio_arquivo = $_POST['relatorio_arquivo'];
@@ -25,6 +26,14 @@ session_start();
         $horas_relatorio = filter_input(INPUT_POST, 'horas_relatorio', FILTER_SANITIZE_NUMBER_INT);
    
       
+            $nome = $_SESSION['nome'] ;
+            //$nome ='vanessa';
+
+            $sql_user = "SELECT * FROM cliente WHERE nome = '$nome'";
+            $resultado = mysqli_query($conn, $sql_user); //mysqli_query (): Executa uma consulta em um banco de dados. Nos retorna uma matriz.
+
+            $reg = mysqli_fetch_row($resultado);
+                $id_user = $reg[4];
 
             $id_proj=$projAlu;
         

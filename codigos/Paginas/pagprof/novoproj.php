@@ -1,3 +1,9 @@
+<?php
+    include_once("conexao.php");
+    //Para conectar essa página ao banco de dados. Entrar nele
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,35 +37,39 @@
         <div class="Formulario">
 
             <h1 class="title new project">Criar novo projeto</h1>
-            <form class="form3">
+            <form class="form3" name="novoproj" action="enviaproj.php" method="post">
                     <div>  
                     <label>Nome do projeto</label>                    
-                    <input class="box1" type="text" id="nome projeto" name="nome projeto">
+                    <input class="box1" type="text" id="nome projeto" name="nomeproj">
                     </div>                  
                    
                     <div>
                         <label>Resumo do projeto</label>                                        
-                        <input class="box2" type="text" id="resumo projeto" name="resumo projeto">
+                        <input class="box2" type="text" id="resumo projeto" name="resumoproj">
                     </div>
 
                     <div>
                     <label>Incluir atividades</label>
-                    <input class="box2" type="text" id="incluir atividades" name="incluir atividades">
-                    </div>
-
-                    <div>
-                    <label>Incluir aluno</label>                 
-                    <input class="box1" type="text" id="incluir aluno" name="incluir atividades">
+                    <input class="box2" type="text" id="incluir atividades" name="incluir_atividades">
                     </div>
                     
                     <div> 
-                    <label>Matrícula</label>
-                    <input class="so_numero" type="number" id="matricula" name="matricula">
+                    <label>Incluir aluno: cpf do aluno</label>
+                    <input class="so_numero" type="number" id="matricula" name="cpf">
                     </div> 
                     
                     <div>
-                        <input class="butao" type="submit" value="Enviar">
+                        <input class="butao" type="submit" value="Enviar" name="enviarproj">
                     </div>
+
+                <?php
+                if(isset($_SESSION['msg'])){
+                    echo $_SESSION['msg'];
+                    unset($_SESSION['msg']);
+
+                }
+
+                ?>
             </form>     
 
         </div>   
