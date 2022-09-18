@@ -30,7 +30,7 @@
                         <br></br>
                         <button>Entrar</button>
                         <br></br>
-                        <button> <a href = "novoCadastro.php">Criar nova conta</a></button>
+                        <button><a href="novoCadastro.php" style="text-decoration:none; color:black">Criar nova conta</a></button>
                     </div>  
                 </div>
             </form>
