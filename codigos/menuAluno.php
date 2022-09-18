@@ -30,11 +30,11 @@
           
          <!--MENU-->
          <div class="item1_menu"><a href="Paginas/pagaluno/relatorios.php">Enviar Relatório</a></div>
-         <div class="item2_menu"><a href="Paginas/pagaluno/verificarhoras.html">Verificar Horas</a></div>  
-         <div class="item3_menu"><a href="Paginas/pagaluno/enviarcertificado.html">Enviar Certificado</a></div>
-         <div class="item4_menu"><a href="Paginas/pagaluno/verificarpendencias.html">Verificar Pendências</a></div>
-         <div class="item5_menu"><a href="Paginas/pagaluno/solicitar_contato.html">Solicitar Contato</a></div>
-         <div class="item6_menu"><a href="Paginas/pagaluno/notificacoes.html">Notificações</a></div>  
+         <div class="item2_menu"><a href="Paginas/pagaluno/verificarhoras.php">Verificar Horas</a></div>  
+         <div class="item3_menu"><a href="Paginas/pagaluno/enviarcertificado.php">Enviar Certificado</a></div>
+         <div class="item4_menu"></div>
+         <div class="item5_menu"></div>
+         <div class="item6_menu"></div>  
 
                       <!--Logo-->
     <!--INFERIOR DA TELA ESQUERDA--> 

@@ -113,7 +113,7 @@ include_once("conexao.php");
 
                         $_SESSION['nome'] = $usuario['nome'];
             
-                        echo "professor";
+                        header("Location: menuProfessor.php");
                                     
                     }
                     else{
@@ -131,7 +131,7 @@ include_once("conexao.php");
 
                             $_SESSION['nome'] = $usuario['nome'];
             
-                            echo "coordenador";            
+                            header("Location: menuCoordenador.php");           
                         }
                         else{
                             sleep(1);
