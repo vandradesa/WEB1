@@ -38,11 +38,11 @@
             <h1 class="title1">Projeto 1</h1>
             <h1 class="title2">Enviar relatório</h1>
  
-                <form action="Processa_valid_esclh_proj.php" method="post" class="form1">
+                <form action="Processa_relatorio.php" method="post" class="form1">
                     <div>
                     <label for="projetoselec">Selecione o projeto: </label> 
                     
-                    <select id="mes" name ="select_projeto">
+                    <select id="mes" name ="select_projetoAlu">
                         <!-- <option> Selecione  </option> -- Ruim que aí já pega a opção valor de select = 1 -->
 
                         <?php
@@ -57,6 +57,7 @@
                             //Explic. while com mysqli_fetch_assoc: "Seria um loop eterno" MAS cada vez que mysqli_fetch_assoc($resultado)é acessado, o ponteiro se move para o próximo registro. Por fim, quando nenhum registro é encontrado, ele retorna o "null" que quebra a condição while.
                             while ($linha_projetos = mysqli_fetch_assoc($resultado_s_projetos)) { //mysqli_fetch_assoc: Obtem uma linha do conjunto de resultados como uma matriz associativa. Chamado "sempre"/várias vezes, roda até "nul"
                             ?> 
+                    
                                 <option value = "<?= $linha_projetos['id']; ?>"> <?= $linha_projetos['nome'];?> </option> <!-- Entre 'aspas' estão as colunas do BD -->
                                 <!-- "value" é o valor que será enviado para o BD. -->
                             <?php
@@ -75,30 +76,32 @@
                 
                     <br></br> <!-- <a href="MenuProfessor.html"> Antes button ficava aqui dentro </a> -->
                         </div>
-                        <div>
-                    <button type="submit" value="projetoescolhido" class="butao">Entrar</button>
-                    <!-- SIM, BUTTON PODE FAZER SUBMIT de formulário -->
-                    </div>
+                 
                 
                 </form>
 
-                <form class="form2">
+                <form class="form2" action="Processa_relatorio.php" method="post">
                                   
                     <div><label class="format2">Anexar relatório:</label>
 
                         <div class="anexardoc">  <!--Nessa linha nós escolhemos o label da div, da divisão, qual o espaço dela etc. Sua descrilçao está no arquivo css (.anexardoc {}) -->
-                            <input type="file"   name="arquivo" class= "anexar" > <!--Nessa linha está acontecendo esse link da label, mas pela classe descrita ( .anexar{} )-->
+                            <input type="file"   name="relatorio_arquivo" class= "anexar" > <!--Nessa linha está acontecendo esse link da label, mas pela classe descrita ( .anexar{} )-->
                         </div>
                     
                     
                     </div>
                   
                     <div>      
-                    <label for="atividades" class="atividade">Descreva as atividades e horas realizadas: </label>
-                    <textarea id="atividades"name="atividades"></textarea>
+                    <label for="atividades" class="atividade">Descreva as atividades realizadas: </label>
+                    <textarea id="atividades"name="atividades" name="descri_relatorio"></textarea>
+                    </div>
+
+                    <div>      
+                    <label for="horas" class="atividade">Horas realizadas: </label>
+                    <input type="number" id="horas_relatorio" name="horas_relatorio"></textarea>
                     </div>
                
-                    <div><input class="butao" type="submit" value="Enviar"></div>
+                    <div><input class="butao" type="submit" value="Enviar" name="botao_relatorio"></div>
 
                 </form>
              
