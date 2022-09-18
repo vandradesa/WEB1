@@ -29,7 +29,7 @@
         </div>                   
           
          <!--MENU-->
-         <div class="item1_menu"><a href="Paginas/pagaluno/relatorios.html">Enviar Relatório</a></div>
+         <div class="item1_menu"><a href="Paginas/pagaluno/relatorios.php">Enviar Relatório</a></div>
          <div class="item2_menu"><a href="Paginas/pagaluno/verificarhoras.html">Verificar Horas</a></div>  
          <div class="item3_menu"><a href="Paginas/pagaluno/enviarcertificado.html">Enviar Certificado</a></div>
          <div class="item4_menu"><a href="Paginas/pagaluno/verificarpendencias.html">Verificar Pendências</a></div>
