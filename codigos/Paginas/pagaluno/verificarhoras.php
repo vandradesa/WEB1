@@ -41,7 +41,7 @@
 
                  
                     <div>  
-                <form action="Processa_relatorio.php" method="post" class="form4">
+                <form action="Processa_relatorio.php" method="post" class="form2">
                     <div>
                     <label for="buscaproj">Selecione o projeto: </label> 
                     

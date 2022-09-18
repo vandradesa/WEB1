@@ -47,7 +47,7 @@
 
             ?>
  
-                <form action="Processa_relatorio.php" method="post" class="form1">
+                <form action="Processa_relatorio.php" method="post" class="form2">
                     <div>
                     <label for="projetoselec">Selecione o projeto: </label> 
                     
