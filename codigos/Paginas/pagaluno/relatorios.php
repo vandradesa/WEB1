@@ -69,10 +69,8 @@
                         while($reg = mysqli_fetch_row($resultado)){
                             $id_projeto = $reg[1];
                           
-                            $select_de_projetos = "SELECT * FROM projeto where id = '$id_projeto'"; //Aqui fazemos NOSSA LIGAÇÃO PHP como o MYSQL, trazendo os dados da tabela projeto.
-                            $resultado_s_projetos = mysqli_query($conn, $select_de_projetos); //
+                            $select_de_projetos = "SELECT * FROM projeto where id = '$id_projeto'"; //Aqui fazemos NOSSA LIGAÇÃO PHP como o MYSQL, trazendo os dados da tabela projeto
 
-                    
                             $resultado_s_projetos = mysqli_query($conn, $select_de_projetos); //mysqli_query (): Executa uma consulta em um banco de dados. Nos retorna uma matriz.
                             //..."$conn" vem do nosso include_o ("conexao.php");
                             

@@ -50,9 +50,19 @@
 
                         <?php
                  
+                        $cpf_aluno = $_SESSION['cpf'];
+
+                        $select_usuario = "SELECT * FROM participa WHERE cpf_cliente = '$cpf_aluno'";                                            
+
+                        $resultado = mysqli_query($conn, $select_usuario); //mysqli_query (): Executa uma consulta em um banco de dados. Nos retorna uma matriz.
+
+                        while($reg = mysqli_fetch_row($resultado)){
+                            $id_projeto = $reg[1];
                         
-                            $select_de_projetos = "SELECT * FROM projeto"; //Aqui fazemos NOSSA LIGAÇÃO PHP como o MYSQL, trazendo os dados da tabela projeto.
-                            $resultado_s_projetos = mysqli_query($conn, $select_de_projetos); //mysqli_query (): 
+                            $select_de_projetos = "SELECT * FROM projeto where id = '$id_projeto'"; //Aqui fazemos NOSSA LIGAÇÃO PHP como o MYSQL, trazendo os dados da tabela projeto
+
+                            $resultado_s_projetos = mysqli_query($conn, $select_de_projetos); //mysqli_query (): Executa uma consulta em um banco de dados. Nos retorna uma matriz.
+                            //..."$conn" vem do nosso include_o ("conexao.php"); 
                             while ($linha_projetos = mysqli_fetch_assoc($resultado_s_projetos)) { 
                             ?> 
                     
@@ -60,6 +70,7 @@
                                 <!-- "value" é o valor que será enviado para o BD. -->
                             <?php
                             }
+                        }
                             ?>
 
                         -->

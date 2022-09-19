@@ -5,7 +5,7 @@
  }
 
  $proj = $_SESSION['select_proj'];
-    echo("$proj"); 
+   
 
 ?>
 
