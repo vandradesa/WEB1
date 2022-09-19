@@ -141,9 +141,8 @@ input{
     box-sizing: border-box;
 }
 
-.so_numero::-webkit-inner-spin-button{
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
-    -moz-appearance: textfield;
-  
 }

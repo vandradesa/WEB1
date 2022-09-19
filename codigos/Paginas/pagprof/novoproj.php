@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar novo projeto</title>
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="valida.js"></script>
 </head>
 <body>
     <div class="container">   <!--Caixa inteira...-->
@@ -55,11 +56,11 @@
                     
                     <div> 
                     <label>Incluir aluno: cpf do aluno</label>
-                    <input class="so_numero" type="number" id="matricula" name="cpf">
+                    <input class="so_numero" type="number" id="cpf" name="cpf" oninput="maxLencpf(this)" onblur="ValidarCPF(this)">
                     </div> 
                     
                     <div>
-                        <input class="butao" type="submit" value="Enviar" name="enviarproj">
+                        <input class="butao" type="submit" value="Enviar" name="enviarproj" onclick="validarproj()">
                     </div>
 
                 <?php

@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enviar Certificado</title>
     <link rel="stylesheet" href="style.css">
+    <script language="javascript" type="text/javascript" src="validaaluno.js"></script>
 </head>
 
 <body>
@@ -28,9 +29,9 @@
             <div class="item1_menu"><a href="relatorios.php">Enviar Relatório</a></div>
             <div class="item2_menu"><a href="verificarhoras.php">Verificar Horas</a></div>  
             <div class="item3_menu"><a href="enviarcertificado.php">Enviar Certificado</a></div>
-            <div class="item4_menu"><a href="verificarpendencias.html">Verificar Pendências</a></div>
-            <div class="item5_menu"><a href="solicitar_contato.html">Solicitar Contato</a></div>
-            <div class="item6_menu"><a href="notificacoes.html">Notificações</a></div> 
+            <div class="item4_menu"></div>
+            <div class="item5_menu"></div>
+            <div class="item6_menu"></div> 
         </div>
 
         <!--Tela direita - Formularios...-->
@@ -70,14 +71,14 @@
                     <label for class="anexardoc">Anexar documento </label>
                     
                     <div class="anexardoc">  <!--Nessa linha nós escolhemos o label da div, da divisão, qual o espaço dela etc. Sua descrilçao está no arquivo css (.anexardoc {}) -->
-                        <input type="file"   name="arquivo" class= "anexar" > <!--Nessa linha está acontecendo esse link da label, mas pela classe descrita ( .anexar{} )-->
+                        <input type="file"   name="arquivo" class= "anexar" id="arquivo"> <!--Nessa linha está acontecendo esse link da label, mas pela classe descrita ( .anexar{} )-->
                     </div>
                    
                     </div>
                     
                     
                            
-                    <div><input class="butao" type="submit" value="Enviar" name="certificado"></div>
+                    <div><input class="butao" type="submit" value="Enviar" name="certificado" onclick="validarrela()"></div>
                 </form>         
 
         
