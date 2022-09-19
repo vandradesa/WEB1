@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verificar relatórios</title>
     <link rel="stylesheet" href="style_relatorios.css">
+    <script language="javascript" type="text/javascript" src="validaaluno.js"></script>
 </head>
 
 <body>
@@ -91,7 +92,7 @@
                     <div><label class="format2">Anexar relatório:</label>
 
                         <div class="anexardoc">  <!--Nessa linha nós escolhemos o label da div, da divisão, qual o espaço dela etc. Sua descrilçao está no arquivo css (.anexardoc {}) -->
-                            <input type="file"   name="relatorio_arquivo" class= "anexar" > <!--Nessa linha está acontecendo esse link da label, mas pela classe descrita ( .anexar{} )-->
+                            <input type="file"   name="relatorio_arquivo" class= "anexar" id="arquivo"> <!--Nessa linha está acontecendo esse link da label, mas pela classe descrita ( .anexar{} )-->
                         </div>
                     
                     
@@ -107,7 +108,7 @@
                     <input type="number" id="horas_relatorio" name="horas_relatorio">
                     </div>
                
-                    <div><input class="butao" type="submit" value="Enviar" name="botao_relatorio"></div>
+                    <div><input class="butao" type="submit" value="Enviar" name="botao_relatorio" onclick="validarela(),validarhora()"></div>
 
                 </form>
              

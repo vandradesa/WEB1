@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enviar Certificado</title>
     <link rel="stylesheet" href="style.css">
+    <script language="javascript" type="text/javascript" src="validaaluno.js"></script>
 </head>
 
 <body>
@@ -70,14 +71,14 @@
                     <label for class="anexardoc">Anexar documento </label>
                     
                     <div class="anexardoc">  <!--Nessa linha nós escolhemos o label da div, da divisão, qual o espaço dela etc. Sua descrilçao está no arquivo css (.anexardoc {}) -->
-                        <input type="file"   name="arquivo" class= "anexar" > <!--Nessa linha está acontecendo esse link da label, mas pela classe descrita ( .anexar{} )-->
+                        <input type="file"   name="arquivo" class= "anexar" id="arquivo"> <!--Nessa linha está acontecendo esse link da label, mas pela classe descrita ( .anexar{} )-->
                     </div>
                    
                     </div>
                     
                     
                            
-                    <div><input class="butao" type="submit" value="Enviar" name="certificado"></div>
+                    <div><input class="butao" type="submit" value="Enviar" name="certificado" onclick="validarrela()"></div>
                 </form>         
 
         
