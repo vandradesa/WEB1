@@ -35,7 +35,7 @@
 
                         <div class="subselecao">
                             <div class="Projetos">
-                                <form action="Processa_valid_esclh_proj.php" method="post">
+                                <form action="Processa_escolha.php" method="post">
                                     <label for="projetoselec">Selecione o projeto: </label> 
                                     
                                     <select id="projetoselec" name ="select_projeto">

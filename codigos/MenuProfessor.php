@@ -30,12 +30,12 @@
         </div>                   
           
          <!--MENU-->
-         <div class="item1_menu"><a href="Paginas\pagprof\relatorios.html">Verificar relatórios</a></div>
+         <div class="item1_menu"><a href="Paginas\pagprof\listarelatorios.php">Verificar relatórios</a></div>
          <div class="item2_menu"><a href="Paginas\pagprof\listaalunos.html">Listar alunos</a></div>  
          <div class="item3_menu"><a href="Paginas\pagprof\novoaluno.html">Incluir novo aluno</a></div>
          <div class="item4_menu"><a href="Paginas\pagprof\novasatividades.html">Incluir novas atividades</a></div>
-         <div class="item5_menu"><a href="Paginas\pagprof\notificacoes.html">Notificações</a></div>
-         <div class="item6_menu"><a href="Paginas\pagprof\novoproj.html">Criar novo projeto</a></div>  
+         <div class="item5_menu"></a></div>
+         <div class="item6_menu"><a href="Paginas\pagprof\novoproj.php">Criar novo projeto</a></div>  
 
                       <!--Logo-->
     <!--INFERIOR DA TELA ESQUERDA--> 
