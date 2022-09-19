@@ -4,6 +4,9 @@
     session_start();
  }
 
+ $proj = $_SESSION['select_proj'];
+    echo("$proj"); 
+
 ?>
 
 <!DOCTYPE html>

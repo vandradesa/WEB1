@@ -60,7 +60,19 @@
                         //mysqli_fetch_assoc: é usado com o resultado de mysqli_query. O que esta função faz é criar um array que representa a linha do dado retornado do banco de dados. Tem que ser chamada várias vezes. Na primeira chamada, retorna a primeira linha como array, na segunda chamada, retorna a segunda linha como array.
                         //array_push: adiciona um elemento dentro de um array.
                         
-                            $select_de_projetos = "SELECT * FROM projeto"; //Aqui fazemos NOSSA LIGAÇÃO PHP como o MYSQL, trazendo os dados da tabela projeto.
+                        $cpf_aluno = $_SESSION['cpf'];
+
+                        $select_usuario = "SELECT * FROM participa WHERE cpf_cliente = '$cpf_aluno'";                                            
+
+                        $resultado = mysqli_query($conn, $select_usuario); //mysqli_query (): Executa uma consulta em um banco de dados. Nos retorna uma matriz.
+
+                        while($reg = mysqli_fetch_row($resultado)){
+                            $id_projeto = $reg[1];
+                          
+                            $select_de_projetos = "SELECT * FROM projeto where id = '$id_projeto'"; //Aqui fazemos NOSSA LIGAÇÃO PHP como o MYSQL, trazendo os dados da tabela projeto.
+                            $resultado_s_projetos = mysqli_query($conn, $select_de_projetos); //
+
+                    
                             $resultado_s_projetos = mysqli_query($conn, $select_de_projetos); //mysqli_query (): Executa uma consulta em um banco de dados. Nos retorna uma matriz.
                             //..."$conn" vem do nosso include_o ("conexao.php");
                             
@@ -72,6 +84,7 @@
                                 <!-- "value" é o valor que será enviado para o BD. -->
                             <?php
                             }
+                        }
                             ?>
 
                         <!-- "?= $f" faz o mesmo efeito  que "echo $f". Isso no php abaixo-->

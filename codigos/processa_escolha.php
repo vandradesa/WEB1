@@ -3,7 +3,7 @@
     //Para conectar essa página ao banco de dados. Entrar nele
 
 
-//session_start();
+  session_start();
 
 
 
@@ -17,9 +17,10 @@
         #$erros = "USUÁRIO INVALIDO";
 
    
-
+        
         if($select_proj != 0 ) {
-            #$_SESSION['usuario'] = $_POST['usuario'];
+            $_SESSION['select_proj']=$select_proj;
+           
             header('Location: MenuProfessor.php');//AQUI SETAMOS O URL/ENDEREÇO QUE O BUTÃO DA OUTRA PÁGINA MANDARÁ O USUÁRIO!
         }else{
             header('Location: EscolherProjeto.php'); //Método Básico Para Fazer Um Redirecionamento PHP

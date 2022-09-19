@@ -25,7 +25,7 @@
 
         <!--MENU-->
         <div class="MENU">
-            <div class="item1_menu"><a href="relatorios.php">Verificar relatórios</a></div>
+            <div class="item1_menu"><a href="listarelatorios.php">Verificar relatórios</a></div>
             <div class="item2_menu"><a href="listaalunos.html">Listar alunos</a></div>  
             <div class="item3_menu"><a href="novoaluno.html">Incluir novo aluno</a></div>
             <div class="item4_menu"><a href="novasatividades.html">Incluir novas atividades</a></div>
@@ -60,7 +60,7 @@
                     </div> 
                     
                     <div>
-                        <input class="butao" type="submit" value="Enviar" name="enviarproj">
+                        <input class="butao" type="submit" value="Enviar" name="enviarproj" onclick="valida.js">
                     </div>
 
                 <?php

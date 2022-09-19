@@ -93,6 +93,7 @@ include_once("conexao.php");
                     }
 
                     $_SESSION['nome'] = $usuario['nome'];
+                    $_SESSION['cpf'] = $usuario['cpf'];
         
                     header("Location: menuAluno.php");
                                 
@@ -112,8 +113,9 @@ include_once("conexao.php");
                         }
 
                         $_SESSION['nome'] = $usuario['nome'];
+                        $_SESSION['cpf'] = $usuario['cpf'];
             
-                        header("Location: menuProfessor.php");
+                        header("Location: EscolherProjeto.php");
                                     
                     }
                     else{
@@ -130,6 +132,7 @@ include_once("conexao.php");
                             }
 
                             $_SESSION['nome'] = $usuario['nome'];
+                            $_SESSION['cpf'] = $usuario['cpf'];
             
                             header("Location: menuCoordenador.php");           
                         }

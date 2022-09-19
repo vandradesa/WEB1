@@ -39,31 +39,41 @@
 
 
                 session_start();    
+                            $idproj=$_SESSION['select_proj'];
+                            global $x;
+                            $x=0;  
                 
-                            $sql_user = "SELECT * FROM relatorio";
+                            $sql_user = "SELECT * FROM relatorio where id_projeto ='$idproj' ";
                             $resultado = mysqli_query($conn, $sql_user); //mysqli_query (): Executa uma consulta em um banco de dados. Nos retorna uma matriz.
-
+                      
                             while( $row_relatorios = mysqli_fetch_row($resultado)){
-                                echo("ID: ". $row_relatorios[0]."<br>");
-                                echo("ENVIO: ". $row_relatorios[1]."<br>");
-                                echo("HORAS REALIZADAS: ". $row_relatorios[2]."<br>");
+                              
+                                    echo("ID: ". $row_relatorios[0]."<br>");
+                                    echo("ENVIO: ". $row_relatorios[1]."<br>");
+                                    echo("HORAS REALIZADAS: ". $row_relatorios[2]."<br>");
 
-                                $id_usuario= $row_relatorios[6];
+                                    $id_usuario= $row_relatorios[6];
 
 
-                                    $sql_proj = "SELECT * FROM cliente WHERE cpf = '$id_usuario'";
-                                    $resultado2 = mysqli_query($conn, $sql_proj); //mysqli_query (): Executa uma consulta em um banco de dados. Nos retorna uma matriz.
-                                    $reg = mysqli_fetch_row($resultado2);
-                                    $id_nome = $reg[2];
+                                        $sql_proj = "SELECT * FROM cliente WHERE cpf = '$id_usuario'";
+                                        $resultado2 = mysqli_query($conn, $sql_proj); //mysqli_query (): Executa uma consulta em um banco de dados. Nos retorna uma matriz.
+                                        $reg = mysqli_fetch_row($resultado2);
+                                        $id_nome = $reg[2];
+                                    
 
-                                echo("aluno: ". $id_nome."<br><hr>");                            
+                                    echo("aluno: ". $id_nome."<br><hr>");                            
                                 
-                            }                            
+                                $x ++;
+                                
+                            }  
+                            if($x==0){
+                                echo("Não há relatorios para esse projeto!");
+                            }                          
                  
             ?>   
                         </div>     
                     
-                    <div>  <label class="format2">Digite o numero do projeto</label>
+                    <div>  <label class="format2">Digite o ID do relatorio</label>
                     <input type="number" name="idproj" id="idproj">
                     </div>
                   

@@ -1,6 +1,7 @@
 <?php
     include_once("conexao.php");
     //Para conectar essa página ao banco de dados. Entrar nele
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -36,27 +37,39 @@
                         <div class="subselecao">
                             <div class="Projetos">
                                 <form action="Processa_escolha.php" method="post">
+                                    
+
                                     <label for="projetoselec">Selecione o projeto: </label> 
                                     
                                     <select id="projetoselec" name ="select_projeto">
                                         <!-- <option> Selecione  </option> -- Ruim que aí já pega a opção valor de select = 1 -->
 
                                         <?php
+                                            
+                                          
                                         //mysqli_query: executa uma consulta no banco de dados.
                                         //mysqli_fetch_assoc: é usado com o resultado de mysqli_query. O que esta função faz é criar um array que representa a linha do dado retornado do banco de dados. Tem que ser chamada várias vezes. Na primeira chamada, retorna a primeira linha como array, na segunda chamada, retorna a segunda linha como array.
                                         //array_push: adiciona um elemento dentro de um array.
-                                        
-                                            $select_de_projetos = "SELECT * FROM projeto"; //Aqui fazemos NOSSA LIGAÇÃO PHP como o MYSQL, trazendo os dados da tabela projeto.
-                                            $resultado_s_projetos = mysqli_query($conn, $select_de_projetos); //mysqli_query (): Executa uma consulta em um banco de dados. Nos retorna uma matriz.
-                                            //..."$conn" vem do nosso include_o ("conexao.php");
-                                            
-                                            //Explic. while com mysqli_fetch_assoc: "Seria um loop eterno" MAS cada vez que mysqli_fetch_assoc($resultado)é acessado, o ponteiro se move para o próximo registro. Por fim, quando nenhum registro é encontrado, ele retorna o "null" que quebra a condição while.
-                                            while ($linha_projetos = mysqli_fetch_assoc($resultado_s_projetos)) { //mysqli_fetch_assoc: Obtem uma linha do conjunto de resultados como uma matriz associativa. Chamado "sempre"/várias vezes, roda até "nul"
-                                            ?> 
-                                                <option value = "<?= $linha_projetos['id']; ?>"> <?= $linha_projetos['nome'];?> </option> <!-- Entre 'aspas' estão as colunas do BD -->
-                                                <!-- "value" é o valor que será enviado para o BD. -->
-                                            <?php
-                                            }
+                                            $cpf_prof = $_SESSION['cpf'];
+
+                                            $select_usuario = "SELECT * FROM participa WHERE cpf_cliente = '$cpf_prof'";                                            
+
+                                            $resultado = mysqli_query($conn, $select_usuario); //mysqli_query (): Executa uma consulta em um banco de dados. Nos retorna uma matriz.
+
+                                            while($reg = mysqli_fetch_row($resultado)){
+                                                $id_projeto = $reg[1];
+                                              
+
+                                                $select_de_projetos = "SELECT * FROM projeto where id = '$id_projeto'"; //Aqui fazemos NOSSA LIGAÇÃO PHP como o MYSQL, trazendo os dados da tabela projeto.
+                                                $resultado_s_projetos = mysqli_query($conn, $select_de_projetos); //
+                                                while ($linha_projetos = mysqli_fetch_assoc($resultado_s_projetos)) { 
+
+                                                ?> 
+                                                    <option value = "<?= $linha_projetos['id']; ?>"> <?= $linha_projetos['nome'];?> </option> <!-- Entre 'aspas' estão as colunas do BD -->
+                                                    <!-- "value" é o valor que será enviado para o BD. -->
+                                                <?php
+                                                }
+                                            }   
                                             ?>
 
                                         <!-- "?= $f" faz o mesmo efeito  que "echo $f". Isso no php abaixo-->
@@ -73,6 +86,8 @@
 
                                     <button type="submit" value="projetoescolhido">Entrar</button></a>
                                     <!-- SIM, BUTTON PODE FAZER SUBMIT de formulário -->
+
+                                  
                                 
                                 </form>
 
